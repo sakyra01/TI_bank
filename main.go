@@ -7,7 +7,6 @@ import (
 	"os"
 	"poligon/controllers"
 	"poligon/models"
-	//"IBank/models" //open for new db release
 )
 
 func main() {
@@ -18,6 +17,7 @@ func main() {
 	router.HandleFunc("/api/v1/as/{slug}", controllers.GetSlug).Methods("GET")
 	router.HandleFunc("/api/v1/as/{slug}/targets", controllers.StoreHostsForAs).Methods("POST")
 	router.HandleFunc("/api/v1/as/{slug}/targets", controllers.GetHostsForAs).Methods("GET")
+	router.PathPrefix("/").Handler(http.FileServer(http.Dir("frontend/dist")))
 
 	port := os.Getenv("PORT")
 	if port == "" {

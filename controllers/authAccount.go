@@ -4,8 +4,8 @@ package controllers
 //import (
 //	"encoding/json"
 //	"net/http"
-//	"IBank/models"
-//	u "IBank/utils"
+//	"poligon/models"
+//	u "poligon/utils"
 //)
 //
 //var CreateUser = func(w http.ResponseWriter, r *http.Request) {
